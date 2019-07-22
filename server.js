@@ -5,7 +5,7 @@ const app = express();
 const oauth = require('oauth')
 const consumer = new oauth.OAuth(
     "https://twitter.com/oauth/request_token", "https://twitter.com/oauth/access_token", 
-    process.env.consumerKey, process.env.consumerSecret, "1.0A", "https://imef-femi.github.io/Twitter-Auth-React-Client/auth-page", "HMAC-SHA1");
+    process.env.consumerKey, process.env.consumerSecret, "1.0A", "https://imef-femi.github.io/Twitter-Auth-React-Client/#/auth-page", "HMAC-SHA1");
 
 app.use(cors());
 
