@@ -15,17 +15,17 @@ app.use(express.urlencoded({ extended: false }));
    
 
 app.get('/start-auth', (req, res) => {
-	consumer.getOAuthRequestToken(function(error, oauthToken, oauthTokenSecret, results){
+	consumer.getOAuthRequestToken(function(error, oauthRequestToken, oauthRequestTokenSecret, results){
     if (error) {
       console.log(error)
       res.status(500).send({error:"Error getting OAuth request token : " + error});
 
     } else {  
-      console.log("oauthRequestToken "+oauthToken);
-      console.log("oauthRequestTokenSecret "+oauthTokenSecret);
+      console.log("oauthRequestToken "+oauthRequestToken);
+      console.log("oauthRequestTokenSecret "+oauthRequestTokenSecret);
       res.status(200).send({redirectUrl: "https://twitter.com/oauth/authorize?oauth_token="+oauthToken,
-       oauthRequestToken: oauthToken,
-       oauthRequestTokenSecret: oauthTokenSecret 
+       oauthRequestToken: oauthRequestToken,
+       oauthRequestTokenSecret: oauthRequestTokenSecret 
      })
     }
   }); 
